@@ -1,2 +1,2 @@
 # ecommerce-brasileiras
-Projeto desenvolvido para disciplina Projeto Integrador IV
+Desenvolvido para disciplina Projeto Integrador IV.
