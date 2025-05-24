@@ -22,6 +22,6 @@ public class SaleController {
 
     @PostMapping
     public Sale create(@RequestBody Sale sale) {
-        return repository.save(Sale);
+        return repository.save(sale);
     }
 }

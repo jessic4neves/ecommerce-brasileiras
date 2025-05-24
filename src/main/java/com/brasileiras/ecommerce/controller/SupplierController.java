@@ -22,6 +22,6 @@ public class SupplierController {
 
     @PostMapping
     public Supplier create(@RequestBody Supplier supplier) {
-        return repository.save(Supplier);
+        return repository.save(supplier);
     }
 }
