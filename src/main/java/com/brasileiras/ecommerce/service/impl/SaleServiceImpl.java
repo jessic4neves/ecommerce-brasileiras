@@ -130,18 +130,15 @@ public class SaleServiceImpl implements SaleService {
                 for (int i = 1; i <= payment.getInstallments(); i++) {
                     AccountReceive account = new AccountReceive();
                     account.setSale(sale);
-                    account.setAmount(payment.getAmount().divide(
-                            BigDecimal.valueOf(payment.getInstallments())));
-                    account.setDueDate(LocalDate.now().plusMonths(i));
-                    account.setInstallmentNumber(i);
-                    account.setTotalInstallments(payment.getInstallments());
+                    account.setValue(payment.getValue());
+                    account.paymentData(LocalDate.now().plusMonths(i));
                     account.setStatus(AccountStatus.PENDING);
                     accountReceivableRepository.save(account);
                 }
             } else {
                 AccountReceive account = new AccountReceive();
                 account.setSale(sale);
-                account.setAmount(payment.getAmount());
+                account.setValue(payment.getAmount());
                 account.setDueDate(LocalDate.now());
                 account.setInstallmentNumber(1);
                 account.setTotalInstallments(1);

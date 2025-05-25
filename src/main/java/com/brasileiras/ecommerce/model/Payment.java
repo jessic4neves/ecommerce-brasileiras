@@ -73,7 +73,7 @@ public class Payment {
         this.paymentData = paymentData;
     }
 
-     public BigDecimal getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
