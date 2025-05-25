@@ -9,10 +9,3 @@ public class ResourceNotFoundException extends RuntimeException {
         super(message);
     }
 }
-
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class BusinessException extends RuntimeException {
-    public BusinessException(String message) {
-        super(message);
-    }
-}
