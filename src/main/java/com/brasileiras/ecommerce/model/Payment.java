@@ -3,6 +3,8 @@ package com.brasileiras.ecommerce.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 
+import com.brasileiras.ecommerce.model.enums.PaymentMethod;
+
 @Entity
 public class Payment {
     @Id

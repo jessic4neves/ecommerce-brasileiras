@@ -18,7 +18,6 @@ public class Product {
     @ManyToOne
     private Supplier supplier;
     @OneToMany(mappedBy = "product")
-    @OneToMany(mappedBy = "product")
     private List<SaleItem> saleItems;
 
     public Long getId() {
@@ -85,11 +84,11 @@ public class Product {
         this.supplier = supplier;
     }
 
-    public List<InvoiceItem> getInvoiceItems() {
+    public List<InvoicingItem> getInvoiceItems() {
         return invoiceItems;
     }
 
-    public void setInvoiceItems(List<InvoiceItem> invoiceItems) {
+    public void setInvoiceItems(List<InvoicingItem> invoiceItems) {
         this.invoiceItems = invoiceItems;
     }
 
