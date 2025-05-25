@@ -15,7 +15,7 @@ public class Supplier {
     private String email;
 
     @OneToMany(mappedBy = "supplier")
-    private List<Invoice> invoices;
+    private List<Invoicing> invoices;
 
     public Long getId() {
         return id;
@@ -65,11 +65,11 @@ public class Supplier {
         this.email = email;
     }
 
-    public List<Invoice> getInvoices() {
+    public List<Invoicing> getInvoices() {
         return invoices;
     }
 
-    public void setInvoices(List<Invoice> invoices) {
+    public void setInvoices(List<Invoicing> invoices) {
         this.invoices = invoices;
     }
 }

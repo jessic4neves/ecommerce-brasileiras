@@ -4,7 +4,6 @@ import com.brasileiras.ecommerce.model.Address;
 import com.brasileiras.ecommerce.repository.AddressRepository;
 import com.brasileiras.ecommerce.service.AddressService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

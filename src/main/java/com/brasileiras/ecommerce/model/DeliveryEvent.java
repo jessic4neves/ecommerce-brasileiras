@@ -39,11 +39,11 @@ public class DeliveryEvent {
         this.description = description;
     }
 
-    public EventDeliveryStatus getStatus() {
+    public DeliveryEventStatus getStatus() {
         return status;
     }
 
-    public void setStatus(EventDeliveryStatus status) {
+    public void setStatus(DeliveryEventStatus status) {
         this.status = status;
     }
 }
