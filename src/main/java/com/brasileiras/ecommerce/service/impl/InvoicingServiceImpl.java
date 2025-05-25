@@ -4,7 +4,6 @@ import com.brasileiras.ecommerce.model.Invoicing;
 import com.brasileiras.ecommerce.repository.InvoicingRepository;
 import com.brasileiras.ecommerce.service.InvoicingService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -32,6 +31,7 @@ public class InvoicingServiceImpl implements InvoicingService {
         return invoicingRepository.save(invoicing);
     }
 
+    @Override
     public void update(Long invoicingId, Invoicing updatedInvoicing) {
         Invoicing existingInvoicing = findById(invoicingId);
 

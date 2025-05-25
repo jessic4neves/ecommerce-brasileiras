@@ -4,7 +4,6 @@ import com.brasileiras.ecommerce.model.InvoicingItem;
 import com.brasileiras.ecommerce.repository.InvoicingItemRepository;
 import com.brasileiras.ecommerce.service.InvoicingItemService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,8 +32,8 @@ public class InvoicingItemServiceImpl implements InvoicingItemService {
     }
 
     @Override
-    public void update(Long invoicingItemId, InvoicingItemEvent invoicingItem) {
-        InvoicingItemEvent existingItem = findById(invoicingItemId);
+    public void update(Long invoicingItemId, InvoicingItem invoicingItem) {
+        InvoicingItem existingItem = findById(invoicingItemId);
 
         existingItem.setInvoicing(invoicingItem.getInvoicing());
         existingItem.setProduct(invoicingItem.getProduct());
