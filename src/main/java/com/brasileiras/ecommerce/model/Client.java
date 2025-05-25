@@ -14,8 +14,8 @@ public class Client {
     private String email;
     private String phone;
     
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
-    private List<Address> addresses;
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Address> addresses = new ArrayList<>();
 
     public Long getId() {
         return id;
