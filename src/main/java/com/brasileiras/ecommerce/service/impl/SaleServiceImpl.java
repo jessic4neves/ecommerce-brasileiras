@@ -23,6 +23,35 @@ public class SaleServiceImpl implements SaleService {
     private final AddressRepository addressRepository;
     private final AccountReceivableRepository accountReceivableRepository;
 
+    @Override
+    public Sale save(Sale sale) {
+        return saleRepository.save(sale);
+    }
+
+    @Override
+    public Sale findById(Long id) {
+        return saleRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Sale not found"));
+    }
+
+    @Override
+    public void delete(Long id) {
+        saleRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Sale> findAll() {
+        return saleRepository.findAll();
+    }
+
+    @Override
+    public Sale update(Long id, Sale sale) {
+        Sale existingSale = findById(id);
+        existingSale.setDate(sale.getDate());
+        existingSale.setDeliveryStatus(sale.getDeliveryStatus());
+        return saleRepository.save(existingSale);
+    }
+
     public SaleServiceImpl(SaleRepository saleRepository, ProductRepository productRepository,
                             UserRepository userRepository, AddressRepository addressRepository,
                             AccountReceivableRepository accountReceivableRepository) {

@@ -1,6 +1,5 @@
 package com.brasileiras.ecommerce.security;
 
-import com.brasileiras.ecommerce.model.User;
 import com.brasileiras.ecommerce.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
