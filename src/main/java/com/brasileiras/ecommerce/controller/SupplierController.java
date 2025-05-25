@@ -17,12 +17,12 @@ public class SupplierController {
 
     @GetMapping
     public List<Supplier> getAll() {
-        return supplierService.getAll();
+        return supplierService.findAll();
     }
 
     @GetMapping("/{id}")
     public Supplier getById(@PathVariable Long id) {
-        return supplierService.getById(id);
+        return supplierService.findById(id);
     }
 
     @PutMapping

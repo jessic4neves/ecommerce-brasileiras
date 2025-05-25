@@ -17,12 +17,12 @@ public class TrackDeliveryController {
 
     @GetMapping
     public List<TrackDelivery> getAll() {
-        return trackDeliveryService.getAll();
+        return trackDeliveryService.findAll();
     }
 
     @GetMapping("/{id}")
     public TrackDelivery getById(@PathVariable Long id) {
-        return trackDeliveryService.getById(id);
+        return trackDeliveryService.findById(id);
     }
 
     @PutMapping

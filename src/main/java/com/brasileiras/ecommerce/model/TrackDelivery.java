@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class DeliveryTracking {
+public class TrackDelivery {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

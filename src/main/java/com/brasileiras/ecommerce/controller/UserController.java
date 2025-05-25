@@ -17,12 +17,12 @@ public class UserController {
 
     @GetMapping
     public List<User> getAll() {
-        return userService.getAll();
+        return userService.findAll();
     }
 
     @GetMapping("/{id}")
     public User getById(@PathVariable Long id) {
-        return userService.getById(id);
+        return userService.findById(id);
     }
 
      @PutMapping

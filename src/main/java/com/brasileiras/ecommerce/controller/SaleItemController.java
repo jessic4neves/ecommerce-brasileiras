@@ -17,12 +17,12 @@ public class SaleItemController {
 
     @GetMapping
     public List<SaleItem> getAll() {
-        return saleItemService.getAll();
+        return saleItemService.findAll();
     }
 
     @GetMapping("/{id}")
     public SaleItem getById(@PathVariable Long id) {
-        return saleItemService.getById(id);
+        return saleItemService.findById(id);
     }
 
     @PutMapping
