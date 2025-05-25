@@ -1,6 +1,5 @@
 package com.brasileiras.ecommerce.model;
 
-import com.brasileiras.ecommerce.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
