@@ -67,6 +67,7 @@ public class SaleServiceImpl implements SaleService {
     public Sale finalizeSale(Sale sale) {
         User user = userRepository.findById(sale.getUser().getId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
+        
         Address address = addressRepository.findById(sale.getDeliveryAddress().getId())
                 .orElseThrow(() -> new RuntimeException("Address not found"));
 

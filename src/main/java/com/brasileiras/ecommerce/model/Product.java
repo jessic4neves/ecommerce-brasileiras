@@ -15,6 +15,7 @@ public class Product {
     private BigDecimal purchaseValue;
     private BigDecimal saleValue;
     private int stock;
+    private BigDecimal salePrice;
     private List<InvoicingItem> invoiceItems;
     @ManyToOne
     private Supplier supplier;
@@ -99,5 +100,13 @@ public class Product {
 
     public void setSaleItems(List<SaleItem> saleItems) {
         this.saleItems = saleItems;
+    }
+
+    public BigDecimal getSalePrice() {
+        return salePrice;
+    }
+
+    public void setSalePrice(BigDecimal salePrice) {
+        this.salePrice = salePrice;
     }
 }

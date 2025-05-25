@@ -9,4 +9,5 @@ public interface SaleService {
     Sale save(Sale sale);
     Sale update(Long accountReceiveId, Sale sale);
     void delete(Long id);
+    Sale finalizeSale(Sale sale);
 }

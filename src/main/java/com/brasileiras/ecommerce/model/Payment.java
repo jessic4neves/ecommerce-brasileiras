@@ -23,6 +23,8 @@ public class Payment {
 
     private String paymentData; 
 
+    private BigDecimal amount;
+
     public Long getId() {
         return id;
     }
@@ -69,5 +71,13 @@ public class Payment {
 
     public void setPaymentData(String paymentData) {
         this.paymentData = paymentData;
+    }
+
+     public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
     }
 }
