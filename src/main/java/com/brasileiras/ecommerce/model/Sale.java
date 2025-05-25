@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.brasileiras.ecommerce.model.enums.DeliveryStatus;
+
 @Entity
 public class Sale {
     @Id
@@ -20,11 +22,11 @@ public class Sale {
     @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
     private List<Payment> payments;
     @OneToMany(mappedBy = "sale")
-    private List<AccountReceivable> accountsReceivable;
+    private List<AccountReceive> accountsReceivable;
     @Enumerated(EnumType.STRING)
     private DeliveryStatus deliveryStatus;
     @OneToOne(mappedBy = "sale", cascade = CascadeType.ALL)
-    private DeliveryTracking tracking;
+    private TrackDelivery tracking;
 
     public Long getId() {
         return id;

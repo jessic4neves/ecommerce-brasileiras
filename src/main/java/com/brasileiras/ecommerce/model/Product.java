@@ -15,7 +15,7 @@ public class Product {
     private BigDecimal purchaseValue;
     private BigDecimal saleValue;
     private int stock;
-    private InvoicingItem invoiceItems;
+    private List<InvoicingItem> invoiceItems;
     @ManyToOne
     private Supplier supplier;
     @OneToMany(mappedBy = "product")
