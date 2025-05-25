@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.brasileiras.ecommerce.model.CustomUserDetails;
+import com.brasileiras.ecommerce.model.User;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

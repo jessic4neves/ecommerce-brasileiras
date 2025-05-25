@@ -7,6 +7,6 @@ public interface SaleService {
     List<Sale> findAll();
     Sale findById(Long id);
     Sale save(Sale sale);
-    void update(Long accountReceiveId, Sale sale);
+    Sale update(Long accountReceiveId, Sale sale);
     void delete(Long id);
 }
