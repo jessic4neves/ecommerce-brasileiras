@@ -34,7 +34,7 @@ public class DeliveryEventServiceImpl implements DeliveryEventService {
 
     @Override
     public void update(Long deliveryEventId, DeliveryEvent deliveryEvent) {
-        deliveryEvent deliveryEvent = findById(deliveryEventId);
+        DeliveryEvent deliveryEvent = findById(deliveryEventId);
         deliveryEventRepository.save(deliveryEvent);
     }
 

@@ -34,7 +34,7 @@ public class InvoicingServiceImpl implements InvoicingService {
 
     @Override
     public void update(Long invoicingEventId, InvoicingEvent invoicingEvent) {
-        invoicingEvent invoicingEvent = findById(invoicingEventId);
+        InvoicingEvent invoicingEvent = findById(invoicingEventId);
         invoicingEventRepository.save(invoicingEvent);
     } 
 

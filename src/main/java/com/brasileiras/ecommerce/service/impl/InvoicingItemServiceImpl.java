@@ -34,7 +34,7 @@ public class InvoicingItemServiceImpl implements InvoicingItemService {
 
     @Override
     public void update(Long invoicingItemEventId, InvoicingItemEvent invoicingItemEvent) {
-        invoicingItemEvent invoicingItemEvent = findById(invoicingItemEventId);
+        InvoicingItemEvent invoicingItemEvent = findById(invoicingItemEventId);
         invoicingItemEventRepository.save(invoicingItemEvent);
     } 
 

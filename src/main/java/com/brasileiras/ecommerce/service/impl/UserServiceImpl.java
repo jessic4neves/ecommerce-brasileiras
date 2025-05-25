@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(Long userId, User user) {
-        user user = findById(userId);
+        User user = findById(userId);
         userRepository.save(user);
     } 
 

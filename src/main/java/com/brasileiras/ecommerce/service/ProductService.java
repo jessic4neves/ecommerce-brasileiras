@@ -7,6 +7,7 @@ public interface ProductService {
     List<Product> findAll();
     Product findById(Long id);
     Product save(Product product);
+    void update(Long productId, Product product);
     void updateStock(Long productId, int quantity);
     void delete(Long id);
 }

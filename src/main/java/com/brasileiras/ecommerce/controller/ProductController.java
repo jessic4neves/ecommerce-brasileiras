@@ -30,6 +30,11 @@ public class ProductController {
         productService.update(id, product);
     }
 
+    @PutMapping
+    public void updateStock(@PathVariable Long id, @RequestBody Long quantity) {
+        productService.update(id, product);
+    }
+
     @PostMapping
     public Product save(@RequestBody Product product) {
         return productService.save(product);

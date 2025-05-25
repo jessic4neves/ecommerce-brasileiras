@@ -2,7 +2,7 @@ package com.brasileiras.ecommerce.controller;
 
 import com.brasileiras.ecommerce.model.Address;
 import com.brasileiras.ecommerce.service.AddressService;
-import org.springframework.ecommerce.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 

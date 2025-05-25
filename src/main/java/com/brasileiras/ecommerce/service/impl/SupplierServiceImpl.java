@@ -34,7 +34,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void update(Long supplierId, Supplier supplier) {
-        supplier supplier = findById(supplierId);
+        Supplier supplier = findById(supplierId);
         supplierRepository.save(supplier);
     } 
 

@@ -33,6 +33,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public void update(Long productId, Product product) {
+        Product product = findById(productId);
+        accountReceiveRepository.save(product);
+    }
+
+    @Override
     @Transactional
     public void updateStock(Long productId, int quantity) {
         Product product = findById(productId);

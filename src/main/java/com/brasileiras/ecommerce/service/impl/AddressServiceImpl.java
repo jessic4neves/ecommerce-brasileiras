@@ -34,7 +34,7 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public void update(Long addressId, Address address) {
-        address address = findById(addressId);
+        Address address = findById(addressId);
         addressRepository.save(address);
     }
 

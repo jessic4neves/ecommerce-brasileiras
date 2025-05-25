@@ -34,7 +34,7 @@ public class SaleItemServiceImpl implements SaleItemService {
 
     @Override
     public void update(Long saleItemId, SaleItem saleItem) {
-        saleItem saleItem = findById(saleItemId);
+        SaleItem saleItem = findById(saleItemId);
         saleItemRepository.save(saleItem);
     } 
 

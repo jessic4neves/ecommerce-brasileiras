@@ -34,7 +34,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void update(Long clientId, Client client) {
-        client client = findById(clientId);
+        Client client = findById(clientId);
         clientRepository.save(client);
     }
 

@@ -34,7 +34,7 @@ public class TrackDeliveryServiceImpl implements TrackDeliveryService {
 
     @Override
     public void update(Long trackDeliveryId, TrackDelivery trackDelivery) {
-        trackDelivery trackDelivery = findById(trackDeliveryId);
+        TrackDelivery trackDelivery = findById(trackDeliveryId);
         trackDeliveryRepository.save(trackDelivery);
     } 
 

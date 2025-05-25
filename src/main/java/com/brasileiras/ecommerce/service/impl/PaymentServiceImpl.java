@@ -34,7 +34,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void update(Long paymentId, Payment payment) {
-        payment payment = findById(paymentId);
+        Payment payment = findById(paymentId);
         paymentRepository.save(payment);
     } 
 

@@ -38,7 +38,6 @@ public class AccountReceiveServiceImpl implements AccountReceiveService {
         accountReceiveRepository.save(accountReceive);
     }
 
-
     @Override
     public void delete(Long id) {
         accountReceiveRepository.deleteById(id);
