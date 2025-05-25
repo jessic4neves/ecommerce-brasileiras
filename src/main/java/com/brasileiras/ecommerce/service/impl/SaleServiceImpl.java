@@ -127,11 +127,12 @@ public class SaleServiceImpl implements SaleService {
         for (Payment payment : sale.getPayments()) {
             if (payment.getPaymentMethod() == PaymentMethod.CREDIT_CARD ||
                 payment.getPaymentMethod() == PaymentMethod.INSTALLMENT) {
-                for (int i = 1; i <= payment.getInstallments(); i++) {
+                for (int i = 1; i <= payment.parcels(); i++) {
                     AccountReceive account = new AccountReceive();
                     account.setSale(sale);
-                    account.setValue(payment.getValue());
-                    account.paymentData(LocalDate.now().plusMonths(i));
+                    account.setValue(payment.getValue().divide(
+                            BigDecimal.valueOf(payment.parcels())));
+                    account.paymentDay(LocalDate.now().plusMonths(i));
                     account.setStatus(AccountStatus.PENDING);
                     accountReceivableRepository.save(account);
                 }

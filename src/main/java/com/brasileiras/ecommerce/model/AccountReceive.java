@@ -20,6 +20,8 @@ public class AccountReceive {
     private LocalDate expirationDate;
     
     private LocalDate paymentDay;
+
+    private Sale sale;
     
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
@@ -70,5 +72,13 @@ public class AccountReceive {
 
     public void setStatus(AccountStatus status) {
         this.status = status;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
     }
 }
