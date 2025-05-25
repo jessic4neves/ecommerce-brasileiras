@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.brasileiras.ecommerce.model.enums.DeliveryEventStatus;
+
 @Service
 public class SaleServiceImpl implements SaleService {
     private final SaleRepository saleRepository;
@@ -123,10 +125,10 @@ public class SaleServiceImpl implements SaleService {
 
     private void generateAccountsReceivable(Sale sale) {
         for (Payment payment : sale.getPayments()) {
-            if (payment.getMethod() == PaymentMethod.CREDIT_CARD ||
-                payment.getMethod() == PaymentMethod.INSTALLMENT) {
+            if (payment.getPaymentMethod() == PaymentMethod.CREDIT_CARD ||
+                payment.getPaymentMethod() == PaymentMethod.INSTALLMENT) {
                 for (int i = 1; i <= payment.getInstallments(); i++) {
-                    AccountReceivable account = new AccountReceivable();
+                    AccountReceive account = new AccountReceive();
                     account.setSale(sale);
                     account.setAmount(payment.getAmount().divide(
                             BigDecimal.valueOf(payment.getInstallments())));
@@ -137,7 +139,7 @@ public class SaleServiceImpl implements SaleService {
                     accountReceivableRepository.save(account);
                 }
             } else {
-                AccountReceivable account = new AccountReceivable();
+                AccountReceive account = new AccountReceive();
                 account.setSale(sale);
                 account.setAmount(payment.getAmount());
                 account.setDueDate(LocalDate.now());
@@ -150,12 +152,12 @@ public class SaleServiceImpl implements SaleService {
     }
 
     private void startDeliveryProcess(Sale sale) {
-        DeliveryTracking tracking = new DeliveryTracking();
+        TrackDelivery tracking = new TrackDelivery();
         tracking.setSale(sale);
         tracking.setTrackingCode(generateTrackingCode());
         tracking.setDeliveryAttempts(0);
 
-        DeliveryEvent event = new DeliveryEvent();
+        TrackDelivery event = new TrackDelivery();
         event.setDateTime(LocalDateTime.now());
         event.setDescription("Order received and processing");
         event.setStatus(DeliveryEventStatus.COLLECTED);
