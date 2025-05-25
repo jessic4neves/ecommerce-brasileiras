@@ -17,12 +17,17 @@ public class DeliveryEventController {
 
     @GetMapping
     public List<DeliveryEvent> getAll() {
-        return deliveryEventService.getAll();
+        return deliveryEventService.findAll();
     }
 
     @GetMapping("/{id}")
     public DeliveryEvent getById(@PathVariable Long id) {
-        return deliveryEventService.getById(id);
+        return deliveryEventService.findById(id);
+    }
+
+    @PutMapping
+    public DeliveryEvent update(@PathVariable Long id, @RequestBody DeliveryEvent deliveryEvent) {
+        return deliveryEventService.update(id, deliveryEvent);
     }
 
     @PostMapping

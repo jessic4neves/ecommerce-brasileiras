@@ -25,6 +25,11 @@ public class SaleItemController {
         return saleItemService.getById(id);
     }
 
+    @PutMapping
+    public SaleItem update(@PathVariable Long id, @RequestBody SaleItem saleItem) {
+        return saleItemService.update(id, saleItem);
+    }
+
     @PostMapping
     public SaleItem save(@RequestBody SaleItem saleItem) {
         return saleItemService.save(saleItem);

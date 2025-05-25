@@ -25,6 +25,11 @@ public class TrackDeliveryController {
         return trackDeliveryService.getById(id);
     }
 
+    @PutMapping
+    public TrackDelivery update(@PathVariable Long id, @RequestBody TrackDelivery trackDelivery) {
+        return trackDeliveryService.update(id, trackDelivery);
+    }
+
     @PostMapping
     public TrackDelivery save(@RequestBody TrackDelivery trackDelivery) {
         return trackDeliveryService.save(trackDelivery);

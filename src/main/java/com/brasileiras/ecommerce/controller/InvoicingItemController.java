@@ -16,12 +16,17 @@ public class InvoicingItemController {
 
     @GetMapping
     public List<InvoicingItem> getAll() {
-        return invoicingItemService.getAll();
+        return invoicingItemService.findAll();
     }
 
     @GetMapping("/{id}")
     public InvoicingItem getById(@PathVariable Long id) {
-        return invoicingItemService.getById(id);
+        return invoicingItemService.findById(id);
+    }
+
+    @PutMapping
+    public InvoicingItem update(@PathVariable Long id, @RequestBody InvoicingItem invoicingItem) {
+        return invoicingItemService.update(id, invoicingItem);
     }
 
     @PostMapping

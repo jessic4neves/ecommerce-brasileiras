@@ -17,12 +17,17 @@ public class AddressController {
 
     @GetMapping
     public List<Address> getAll() {
-        return addressService.getAll();
+        return addressService.findAll();
     }
 
     @GetMapping("/{id}")
     public Address getById(@PathVariable Long id) {
-        return addressService.getById(id);
+        return addressService.findById(id);
+    }
+
+    @PutMapping
+    public Address update(@PathVariable Long id, @RequestBody Address address) {
+        return addressService.update(id, address);
     }
 
     @PostMapping

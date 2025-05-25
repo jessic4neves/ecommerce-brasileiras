@@ -17,12 +17,17 @@ public class ClientController {
 
     @GetMapping
     public List<Client> getAll() {
-        return clientService.getAll();
+        return clientService.findAll();
     }
 
     @GetMapping("/{id}")
     public Client getById(@PathVariable Long id) {
-        return clientService.getById(id);
+        return clientService.findById(id);
+    }
+
+    @PutMapping
+    public Client update(@PathVariable Long id, @RequestBody Client client) {
+        return clientService.update(id, client);
     }
 
     @PostMapping

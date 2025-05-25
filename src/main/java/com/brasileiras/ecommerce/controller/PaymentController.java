@@ -17,12 +17,17 @@ public class PaymentController {
 
     @GetMapping
     public List<Payment> getAll() {
-        return paymentService.getAll();
+        return paymentService.findAll();
     }
 
     @GetMapping("/{id}")
     public Payment getById(@PathVariable Long id) {
-        return paymentService.getById(id);
+        return paymentService.findById(id);
+    }
+
+    @PutMapping
+    public Payment update(@PathVariable Long id, @RequestBody Payment payment) {
+        return paymentService.update(id, payment);
     }
 
     @PostMapping

@@ -25,6 +25,11 @@ public class SupplierController {
         return supplierService.getById(id);
     }
 
+    @PutMapping
+    public Supplier update(@PathVariable Long id, @RequestBody Supplier supplier) {
+        return supplierService.update(id, supplier);
+    }
+
     @PostMapping
     public Supplier save(@RequestBody Supplier supplier) {
         return supplierService.save(supplier);

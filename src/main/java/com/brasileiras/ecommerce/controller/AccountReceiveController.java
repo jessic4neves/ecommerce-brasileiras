@@ -17,12 +17,17 @@ public class AccountReceiveController {
 
     @GetMapping
     public List<AccountReceive> getAll() {
-        return accountReceiveService.getAll();
+        return accountReceiveService.findAll();
     }
 
     @GetMapping("/{id}")
     public AccountReceive getById(@PathVariable Long id) {
-        return accountReceiveService.getById(id);
+        return accountReceiveService.findById(id);
+    }
+
+    @PutMapping
+    public AccountReceive update(@PathVariable Long id, @RequestBody AccountReceive accountReceive) {
+        return accountReceiveService.update(id, accountReceive);
     }
 
     @PostMapping

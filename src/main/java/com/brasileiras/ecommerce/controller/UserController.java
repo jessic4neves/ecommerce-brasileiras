@@ -25,6 +25,11 @@ public class UserController {
         return userService.getById(id);
     }
 
+     @PutMapping
+    public User update(@PathVariable Long id, @RequestBody User user) {
+        return userService.update(id, user);
+    }
+
     @PostMapping
     public User save(@RequestBody User user) {
         return userService.save(user);
