@@ -140,9 +140,7 @@ public class SaleServiceImpl implements SaleService {
                 AccountReceive account = new AccountReceive();
                 account.setSale(sale);
                 account.setValue(payment.getAmount());
-                account.setDueDate(LocalDate.now());
-                account.setInstallmentNumber(1);
-                account.setTotalInstallments(1);
+                account.setPaymentDay(LocalDate.now());
                 account.setStatus(AccountStatus.PENDING);
                 accountReceivableRepository.save(account);
             }
@@ -156,11 +154,6 @@ public class SaleServiceImpl implements SaleService {
         tracking.setDeliveryAttempts(0);
 
         TrackDelivery event = new TrackDelivery();
-        event.setDateTime(LocalDateTime.now());
-        event.setDescription("Order received and processing");
-        event.setStatus(DeliveryEventStatus.COLLECTED);
-
-        tracking.setEvents(List.of(event));
         sale.setTracking(tracking);
         saleRepository.save(sale);
     }
