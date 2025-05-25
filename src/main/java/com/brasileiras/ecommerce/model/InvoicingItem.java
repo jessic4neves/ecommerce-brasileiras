@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class SaleItem {
+public class InvoicingItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
-    private Sale sale;
+    private Invoicing invoicing;
     @ManyToOne
     private Product product;
     private int quantity;
-    private BigDecimal unitPrice;
-    private BigDecimal totalPrice;
+    private BigDecimal unitaryValue;
+    private BigDecimal totalValue;
 
 }

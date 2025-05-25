@@ -1,23 +1,21 @@
-package com.brasileiras.ecommerce.model;
+package com.brasileiras.model;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    private String street;
+    private String address;
+    private String number;
+    private String complement;
+    private String neighborhood;
     private String city;
     private String state;
     private String zip;
-    
     @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    private User user;
+
+    // Getters e Setters
 }

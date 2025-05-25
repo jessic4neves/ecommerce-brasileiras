@@ -1,26 +1,29 @@
-package com.brasileiras.ecommerce.model;
+package com.brasileiras.model;
 
 import jakarta.persistence.*;
-import lombok.*;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private LocalDate date;
-    private Double total;
-
+    private String number;
+    private LocalDateTime date;
     @ManyToOne
-    private Client client;
-
-    @OneToMany(cascade = CascadeType.ALL)
+    private User user;
+    @ManyToOne
+    private Address deliveryAddress;
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
     private List<SaleItem> items;
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    private List<Payment> payments;
+    @OneToMany(mappedBy = "sale")
+    private List<AccountReceivable> accountsReceivable;
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus deliveryStatus;
+    @OneToOne(mappedBy = "sale", cascade = CascadeType.ALL)
+    private DeliveryTracking tracking;
+
 }

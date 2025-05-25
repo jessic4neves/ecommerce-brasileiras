@@ -1,23 +1,25 @@
-package com.brasileiras.ecommerce.model;
+package com.brasileiras.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    private String name;
+    private String code;
+    private String description;
     private String barcode;
-    private Double purchasePrice;
-    private Double salePrice;
-    private Integer stock;
-    
+    private BigDecimal purchaseValue;
+    private BigDecimal saleValue;
+    private int stock;
     @ManyToOne
     private Supplier supplier;
+    @OneToMany(mappedBy = "product")
+    private List<InvoiceItem> invoiceItems;
+    @OneToMany(mappedBy = "product")
+    private List<SaleItem> saleItems;
+
 }

@@ -1,17 +1,18 @@
-package com.brasileiras.ecommerce.model;
+package com.brasileiras.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import java.util.List;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    private String name;
+    private String companyName;
     private String cnpj;
+    private String stateRegistration;
+    private String phone;
+    private String email;
+    @OneToMany(mappedBy = "supplier")
+    private List<Invoice> invoices;
 }

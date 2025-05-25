@@ -4,16 +4,16 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-public class SaleItem {
+public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
     private Sale sale;
-    @ManyToOne
-    private Product product;
-    private int quantity;
-    private BigDecimal unitPrice;
-    private BigDecimal totalPrice;
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod paymentMethod;
+    private BigDecimal value;
+    private int parcels;
+    private String paymentData; // Número do cartão, chave PIX, etc.
 
 }
