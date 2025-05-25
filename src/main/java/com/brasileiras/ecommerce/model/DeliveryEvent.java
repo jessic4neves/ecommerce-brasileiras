@@ -3,6 +3,8 @@ package com.brasileiras.ecommerce.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import com.brasileiras.ecommerce.model.enums.DeliveryStatus;
+
 @Entity
 public class DeliveryEvent {
     @Id

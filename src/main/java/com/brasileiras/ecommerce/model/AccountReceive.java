@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.brasileiras.ecommerce.model.enums.AccountStatus;
+
 @Entity
 public class AccountReceive {
     @Id
