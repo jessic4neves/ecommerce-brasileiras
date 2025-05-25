@@ -18,7 +18,6 @@ public class Product {
     @ManyToOne
     private Supplier supplier;
     @OneToMany(mappedBy = "product")
-    private List<InvoicingItem> invoicingItems;
     @OneToMany(mappedBy = "product")
     private List<SaleItem> saleItems;
 

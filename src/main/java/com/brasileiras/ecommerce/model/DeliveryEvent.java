@@ -13,7 +13,7 @@ public class DeliveryEvent {
     private LocalDateTime dateTime;
     private String description;
     @Enumerated(EnumType.STRING)
-    private EventDeliveryStatus status;
+    private DeliveryEventStatus status;
 
     public Long getId() {
         return id;
