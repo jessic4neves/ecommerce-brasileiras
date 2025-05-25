@@ -34,9 +34,16 @@ public class SaleItemServiceImpl implements SaleItemService {
 
     @Override
     public void update(Long saleItemId, SaleItem saleItem) {
-        SaleItem saleItem = findById(saleItemId);
-        saleItemRepository.save(saleItem);
-    } 
+        SaleItem existingSaleItem = findById(saleItemId);
+
+        existingSaleItem.setSale(saleItem.getSale());
+        existingSaleItem.setProduct(saleItem.getProduct());
+        existingSaleItem.setQuantity(saleItem.getQuantity());
+        existingSaleItem.setUnitPrice(saleItem.getUnitPrice());
+        existingSaleItem.setTotalPrice(saleItem.getTotalPrice());
+
+        saleItemRepository.save(existingSaleItem);
+    }
 
     @Override
     public void delete(Long id) {

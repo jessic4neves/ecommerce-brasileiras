@@ -32,7 +32,7 @@ public class ProductController {
 
     @PutMapping
     public void updateStock(@PathVariable Long id, @RequestBody Long quantity) {
-        productService.update(id, quantity);
+        productService.updateStock(id, quantity);
     }
 
     @PostMapping

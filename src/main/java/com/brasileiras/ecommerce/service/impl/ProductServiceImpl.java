@@ -34,8 +34,17 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void update(Long productId, Product product) {
-        Product product = findById(productId);
-        accountReceiveRepository.save(product);
+        Product existingProduct = findById(productId);
+
+        existingProduct.setCode(product.getCode());
+        existingProduct.setDescription(product.getDescription());
+        existingProduct.setBarcode(product.getBarcode());
+        existingProduct.setPurchaseValue(product.getPurchaseValue());
+        existingProduct.setSaleValue(product.getSaleValue());
+        existingProduct.setStock(product.getStock());
+        existingProduct.setSupplier(product.getSupplier());
+
+        productRepository.save(existingProduct);
     }
 
     @Override

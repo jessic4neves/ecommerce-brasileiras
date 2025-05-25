@@ -33,10 +33,17 @@ public class InvoicingItemServiceImpl implements InvoicingItemService {
     }
 
     @Override
-    public void update(Long invoicingItemEventId, InvoicingItemEvent invoicingItemEvent) {
-        InvoicingItemEvent invoicingItemEvent = findById(invoicingItemEventId);
-        invoicingItemEventRepository.save(invoicingItemEvent);
-    } 
+    public void update(Long invoicingItemId, InvoicingItemEvent invoicingItem) {
+        InvoicingItemEvent existingItem = findById(invoicingItemId);
+
+        existingItem.setInvoicing(invoicingItem.getInvoicing());
+        existingItem.setProduct(invoicingItem.getProduct());
+        existingItem.setQuantity(invoicingItem.getQuantity());
+        existingItem.setUnitaryValue(invoicingItem.getUnitaryValue());
+        existingItem.setTotalValue(invoicingItem.getTotalValue());
+
+        invoicingItemRepository.save(existingItem);
+    }
 
     @Override
     public void delete(Long id) {

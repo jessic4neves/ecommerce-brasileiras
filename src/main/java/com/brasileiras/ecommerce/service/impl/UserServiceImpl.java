@@ -29,14 +29,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
-        return userRepository.save(User);
+        return userRepository.save(user);
     }
 
     @Override
     public void update(Long userId, User user) {
-        User user = findById(userId);
-        userRepository.save(user);
-    } 
+        User existingUser = findById(userId);
+        existingUser.setName(user.getName());
+        existingUser.setCpf(user.getCpf());
+        existingUser.setEmail(user.getEmail());
+        existingUser.setPhone(user.getPhone());
+        existingUser.setPassword(user.getPassword());
+
+        userRepository.save(existingUser);
+    }
+
 
     @Override
     public void delete(Long id) {

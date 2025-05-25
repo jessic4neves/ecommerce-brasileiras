@@ -34,8 +34,11 @@ public class DeliveryEventServiceImpl implements DeliveryEventService {
 
     @Override
     public void update(Long deliveryEventId, DeliveryEvent deliveryEvent) {
-        DeliveryEvent deliveryEvent = findById(deliveryEventId);
-        deliveryEventRepository.save(deliveryEvent);
+        DeliveryEvent existingEvent = findById(deliveryEventId);
+        existingEvent.setDateTime(deliveryEvent.getDateTime());
+        existingEvent.setDescription(deliveryEvent.getDescription());
+        existingEvent.setStatus(deliveryEvent.getStatus());
+        deliveryEventRepository.save(existingEvent);
     }
 
     @Override

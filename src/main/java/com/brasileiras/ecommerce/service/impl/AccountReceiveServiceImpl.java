@@ -33,9 +33,16 @@ public class AccountReceiveServiceImpl implements AccountReceiveService {
     }
 
     @Override
-    public void update(Long accountReceiveId, AccountReceive accountReceive) {
-        AccountReceive accountReceive = findById(accountReceiveId);
-        accountReceiveRepository.save(accountReceive);
+    public void update(Long accountReceiveId, AccountReceive updatedAccountReceive) {
+        AccountReceive existingAccountReceive = findById(accountReceiveId);
+
+        existingAccountReceive.setInvoicing(updatedAccountReceive.getInvoicing());
+        existingAccountReceive.setValue(updatedAccountReceive.getValue());
+        existingAccountReceive.setExpirationDate(updatedAccountReceive.getExpirationDate());
+        existingAccountReceive.setPaymentDay(updatedAccountReceive.getPaymentDay());
+        existingAccountReceive.setStatus(updatedAccountReceive.getStatus());
+
+        accountReceiveRepository.save(existingAccountReceive);
     }
 
     @Override

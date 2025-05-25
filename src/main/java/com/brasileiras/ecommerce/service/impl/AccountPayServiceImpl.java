@@ -34,8 +34,18 @@ public class AccountPayServiceImpl implements AccountPayService {
 
     @Override
     public void update(Long accountPayId, AccountPay accountPay) {
-        AccountPay accountPay = findById(accountPayId);
-        accountPayRepository.save(accountPay);
+        AccountPay existingAccountPay = findById(accountPayId);
+        if (existingAccountPay != null) {
+            existingAccountPay.setInvoicing(accountPay.getInvoicing());
+            existingAccountPay.setValue(accountPay.getValue());
+            existingAccountPay.setExpirationDate(accountPay.getExpirationDate());
+            existingAccountPay.setPaymentDay(accountPay.getPaymentDay());
+            existingAccountPay.setStatus(accountPay.getStatus());
+            accountPayRepository.save(existingAccountPay);
+        } else {
+            // Aqui você pode lançar uma exceção ou tratar o caso de não encontrar o registro
+            throw new EntityNotFoundException("AccountPay not found with id " + accountPayId);
+        }
     }
 
     @Override

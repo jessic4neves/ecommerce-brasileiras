@@ -34,9 +34,16 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void update(Long paymentId, Payment payment) {
-        Payment payment = findById(paymentId);
-        paymentRepository.save(payment);
-    } 
+        Payment existingPayment = findById(paymentId);
+        
+        existingPayment.setSale(payment.getSale());
+        existingPayment.setPaymentMethod(payment.getPaymentMethod());
+        existingPayment.setValue(payment.getValue());
+        existingPayment.setParcels(payment.getParcels());
+        existingPayment.setPaymentData(payment.getPaymentData());
+
+        paymentRepository.save(existingPayment);
+    }
 
     @Override
     public void delete(Long id) {

@@ -33,10 +33,17 @@ public class InvoicingServiceImpl implements InvoicingService {
     }
 
     @Override
-    public void update(Long invoicingEventId, InvoicingEvent invoicingEvent) {
-        InvoicingEvent invoicingEvent = findById(invoicingEventId);
-        invoicingEventRepository.save(invoicingEvent);
-    } 
+    public void update(String invoicingId, Invoicing updatedInvoicing) {
+        Invoicing existingInvoicing = findById(invoicingId);
+
+        existingInvoicing.setEmissionDate(updatedInvoicing.getEmissionDate());
+        existingInvoicing.setEntryDate(updatedInvoicing.getEntryDate());
+        existingInvoicing.setSupplier(updatedInvoicing.getSupplier());
+        existingInvoicing.setItems(updatedInvoicing.getItems());
+        existingInvoicing.setAccountPay(updatedInvoicing.getAccountPay());
+
+        InvoicingRepository.save(existingInvoicing);
+    }
 
     @Override
     public void delete(Long id) {

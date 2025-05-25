@@ -34,9 +34,16 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void update(Long supplierId, Supplier supplier) {
-        Supplier supplier = findById(supplierId);
-        supplierRepository.save(supplier);
-    } 
+        Supplier existingSupplier = findById(supplierId);
+
+        existingSupplier.setCompanyName(supplier.getCompanyName());
+        existingSupplier.setCnpj(supplier.getCnpj());
+        existingSupplier.setStateRegistration(supplier.getStateRegistration());
+        existingSupplier.setPhone(supplier.getPhone());
+        existingSupplier.setEmail(supplier.getEmail());
+
+        supplierRepository.save(existingSupplier);
+    }
 
     @Override
     public void delete(Long id) {

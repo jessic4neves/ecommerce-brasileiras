@@ -34,9 +34,15 @@ public class TrackDeliveryServiceImpl implements TrackDeliveryService {
 
     @Override
     public void update(Long trackDeliveryId, TrackDelivery trackDelivery) {
-        TrackDelivery trackDelivery = findById(trackDeliveryId);
-        trackDeliveryRepository.save(trackDelivery);
-    } 
+        TrackDelivery existingTrackDelivery = findById(trackDeliveryId);
+        
+        existingTrackDelivery.setSale(trackDelivery.getSale());
+        existingTrackDelivery.setTrackingCode(trackDelivery.getTrackingCode());
+        existingTrackDelivery.setEvents(trackDelivery.getEvents());
+        existingTrackDelivery.setDeliveryAttempts(trackDelivery.getDeliveryAttempts());
+        
+        trackDeliveryRepository.save(existingTrackDelivery);
+    }
 
     @Override
     public void delete(Long id) {

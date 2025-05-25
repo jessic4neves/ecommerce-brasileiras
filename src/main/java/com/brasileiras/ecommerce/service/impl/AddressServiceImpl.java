@@ -33,9 +33,18 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public void update(Long addressId, Address address) {
-        Address address = findById(addressId);
-        addressRepository.save(address);
+    public void update(Long addressId, Address updatedAddress) {
+        Address existingAddress = findById(addressId);
+        existingAddress.setAddress(updatedAddress.getAddress());
+        existingAddress.setNumber(updatedAddress.getNumber());
+        existingAddress.setComplement(updatedAddress.getComplement());
+        existingAddress.setNeighborhood(updatedAddress.getNeighborhood());
+        existingAddress.setCity(updatedAddress.getCity());
+        existingAddress.setState(updatedAddress.getState());
+        existingAddress.setZip(updatedAddress.getZip());
+        existingAddress.setUser(updatedAddress.getUser());
+
+        addressRepository.save(existingAddress);
     }
 
     @Override
