@@ -4,7 +4,6 @@ import com.brasileiras.ecommerce.model.Payment;
 import com.brasileiras.ecommerce.repository.PaymentRepository;
 import com.brasileiras.ecommerce.service.PaymentService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

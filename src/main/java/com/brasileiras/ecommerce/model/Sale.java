@@ -87,7 +87,7 @@ public class Sale {
         return accountsReceivable;
     }
 
-    public void setAccountsReceivable(List<getAccountsReceivable> accountsReceivable) {
+    public void setAccountsReceivable(List<AccountsReceive> accountsReceivable) {
         this.accountsReceivable = accountsReceivable;
     }
 
