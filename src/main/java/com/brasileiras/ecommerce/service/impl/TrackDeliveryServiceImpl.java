@@ -4,7 +4,6 @@ import com.brasileiras.ecommerce.model.TrackDelivery;
 import com.brasileiras.ecommerce.repository.TrackDeliveryRepository;
 import com.brasileiras.ecommerce.service.TrackDeliveryService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
