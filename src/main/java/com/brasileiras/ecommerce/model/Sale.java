@@ -83,11 +83,11 @@ public class Sale {
         this.payments = payments;
     }
 
-    public List<AccountReceivable> getAccountsReceivable() {
+    public List<AccountReceive> getAccountsReceivable() {
         return accountsReceivable;
     }
 
-    public void setAccountsReceivable(List<AccountReceivable> accountsReceivable) {
+    public void setAccountsReceivable(List<getAccountsReceivable> accountsReceivable) {
         this.accountsReceivable = accountsReceivable;
     }
 
