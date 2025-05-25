@@ -32,8 +32,7 @@ public class InvoicingServiceImpl implements InvoicingService {
         return invoicingRepository.save(invoicing);
     }
 
-    @Override
-    public void update(String invoicingId, Invoicing updatedInvoicing) {
+    public void update(Long invoicingId, Invoicing updatedInvoicing) {
         Invoicing existingInvoicing = findById(invoicingId);
 
         existingInvoicing.setEmissionDate(updatedInvoicing.getEmissionDate());

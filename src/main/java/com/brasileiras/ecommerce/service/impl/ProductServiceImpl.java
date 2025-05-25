@@ -51,7 +51,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public void updateStock(Long productId, int quantity) {
         Product product = findById(productId);
-        product.setEstoque(product.getEstoque() + quantity);
+        product.setStock(product.getStock() + quantity);
         productRepository.save(product);
     }
 
