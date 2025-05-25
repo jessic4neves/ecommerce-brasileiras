@@ -1,4 +1,4 @@
-package com.brasileiras.ecommerce.security;
+package com.brasileiras.ecommerce.model;
 
 import com.brasileiras.ecommerce.model.User;
 import org.springframework.security.core.GrantedAuthority;

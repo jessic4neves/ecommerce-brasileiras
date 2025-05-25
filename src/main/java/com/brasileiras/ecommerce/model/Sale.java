@@ -99,11 +99,11 @@ public class Sale {
         this.deliveryStatus = deliveryStatus;
     }
 
-    public DeliveryTracking getTracking() {
+    public TrackDelivery getTracking() {
         return tracking;
     }
 
-    public void setTracking(DeliveryTracking tracking) {
+    public void setTracking(TrackDelivery tracking) {
         this.tracking = tracking;
     }
 }
