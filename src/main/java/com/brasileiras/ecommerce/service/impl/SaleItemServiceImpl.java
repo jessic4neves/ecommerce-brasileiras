@@ -1,8 +1,8 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.SaleItem;
-import com.brasileiras.repository.SaleItemRepository;
-import com.brasileiras.service.SaleItemService;
+import com.brasileiras.ecommerce.model.SaleItem;
+import com.brasileiras.ecommerce.repository.SaleItemRepository;
+import com.brasileiras.ecommerce.service.SaleItemService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

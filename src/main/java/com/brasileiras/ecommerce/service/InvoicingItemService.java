@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.InvoicingItem;
+import com.brasileiras.ecommerce.model.InvoicingItem;
 import java.util.List;
 
 public interface InvoicingItemService {

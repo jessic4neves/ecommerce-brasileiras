@@ -1,8 +1,8 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.DeliveryEvent;
-import com.brasileiras.repository.DeliveryEventRepository;
-import com.brasileiras.service.DeliveryEventService;
+import com.brasileiras.ecommerce.model.DeliveryEvent;
+import com.brasileiras.ecommerce.repository.DeliveryEventRepository;
+import com.brasileiras.ecommerce.service.DeliveryEventService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,4 +1,4 @@
-package com.brasileiras.util;
+package com.brasileiras.ecommerce.util;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

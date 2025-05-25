@@ -1,8 +1,8 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.AccountReceive;
-import com.brasileiras.repository.AccountReceiveRepository;
-import com.brasileiras.service.AccountReceiveService;
+import com.brasileiras.ecommerce.model.AccountReceive;
+import com.brasileiras.ecommerce.repository.AccountReceiveRepository;
+import com.brasileiras.ecommerce.service.AccountReceiveService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.SaleItem;
+import com.brasileiras.ecommerce.model.SaleItem;
 import java.util.List;
 
 public interface SaleItemService {

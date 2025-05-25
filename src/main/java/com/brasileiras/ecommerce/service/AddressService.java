@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.Address;
+import com.brasileiras.ecommerce.model.Address;
 import java.util.List;
 
 public interface AddressService {

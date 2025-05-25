@@ -1,8 +1,8 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.Invoicing;
-import com.brasileiras.repository.InvoicingRepository;
-import com.brasileiras.service.InvoicingService;
+import com.brasileiras.ecommerce.model.Invoicing;
+import com.brasileiras.ecommerce.repository.InvoicingRepository;
+import com.brasileiras.ecommerce.service.InvoicingService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

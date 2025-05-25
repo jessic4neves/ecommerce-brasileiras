@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.AccountPay;
+import com.brasileiras.ecommerce.model.AccountPay;
 import java.util.List;
 
 public interface AccountPayService {

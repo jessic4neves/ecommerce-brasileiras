@@ -1,4 +1,4 @@
-package com.brasileiras.model;
+package com.brasileiras.ecommerce.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;

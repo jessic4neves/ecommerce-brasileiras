@@ -1,4 +1,4 @@
-package com.brasileiras.model.enums;
+package com.brasileiras.ecommerce.model.enums;
 
 public enum PaymentMethod {
     CREDIT_CARD,

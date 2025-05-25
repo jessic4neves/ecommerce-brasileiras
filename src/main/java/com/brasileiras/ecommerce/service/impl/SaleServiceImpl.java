@@ -1,11 +1,11 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.*;
-import com.brasileiras.model.enums.PaymentMethod;
-import com.brasileiras.model.enums.AccountStatus;
-import com.brasileiras.model.enums.DeliveryStatus;
-import com.brasileiras.repository.*;
-import com.brasileiras.service.SaleService;
+import com.brasileiras.ecommerce.model.*;
+import com.brasileiras.ecommerce.model.enums.PaymentMethod;
+import com.brasileiras.ecommerce.model.enums.AccountStatus;
+import com.brasileiras.ecommerce.model.enums.DeliveryStatus;
+import com.brasileiras.ecommerce.repository.*;
+import com.brasileiras.ecommerce.service.SaleService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

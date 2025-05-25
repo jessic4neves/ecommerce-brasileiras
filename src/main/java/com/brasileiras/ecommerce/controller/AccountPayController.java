@@ -1,7 +1,7 @@
-package com.brasileiras.controller;
+package com.brasileiras.ecommerce.controller;
 
-import com.brasileiras.model.AccountPay;
-import com.brasileiras.service.AccountPayService;
+import com.brasileiras.ecommerce.model.AccountPay;
+import com.brasileiras.ecommerce.service.AccountPayService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.TrackDelivery;
+import com.brasileiras.ecommerce.model.TrackDelivery;
 import java.util.List;
 
 public interface TrackDeliveryService {

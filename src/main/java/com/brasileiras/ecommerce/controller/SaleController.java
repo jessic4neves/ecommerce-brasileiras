@@ -1,7 +1,7 @@
-package com.brasileiras.controller;
+package com.brasileiras.ecommerce.controller;
 
-import com.brasileiras.model.Sale;
-import com.brasileiras.service.SaleService;
+import com.brasileiras.ecommerce.model.Sale;
+import com.brasileiras.ecommerce.service.SaleService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

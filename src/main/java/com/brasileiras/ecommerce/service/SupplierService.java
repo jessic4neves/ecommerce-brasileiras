@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.Supplier;
+import com.brasileiras.ecommerce.model.Supplier;
 import java.util.List;
 
 public interface SupplierService {

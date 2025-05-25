@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.AccountReceive;
+import com.brasileiras.ecommerce.model.AccountReceive;
 import java.util.List;
 
 public interface AccountReceiveService {

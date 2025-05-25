@@ -1,4 +1,4 @@
-package com.brasileiras.dto;
+package com.brasileiras.ecommerce.dto;
 
 public class RegisterDTO {
     private String name;

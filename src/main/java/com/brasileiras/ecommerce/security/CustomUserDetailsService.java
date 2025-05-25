@@ -1,7 +1,7 @@
-package com.brasileiras.security;
+package com.brasileiras.ecommerce.security;
 
-import com.brasileiras.model.User;
-import com.brasileiras.repository.UserRepository;
+import com.brasileiras.ecommerce.model.User;
+import com.brasileiras.ecommerce.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

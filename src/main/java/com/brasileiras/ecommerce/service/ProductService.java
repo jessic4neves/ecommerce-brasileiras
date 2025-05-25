@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.Product;
+import com.brasileiras.ecommerce.model.Product;
 import java.util.List;
 
 public interface ProductService {

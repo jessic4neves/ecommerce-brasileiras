@@ -1,8 +1,8 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.User;
-import com.brasileiras.repository.UserRepository;
-import com.brasileiras.service.UserService;
+import com.brasileiras.ecommerce.model.User;
+import com.brasileiras.ecommerce.repository.UserRepository;
+import com.brasileiras.ecommerce.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

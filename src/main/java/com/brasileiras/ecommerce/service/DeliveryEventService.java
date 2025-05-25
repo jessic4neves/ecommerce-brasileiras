@@ -1,6 +1,6 @@
-package com.brasileiras.service;
+package com.brasileiras.ecommerce.service;
 
-import com.brasileiras.model.DeliveryEvent;
+import com.brasileiras.ecommerce.model.DeliveryEvent;
 import java.util.List;
 
 public interface DeliveryEventService {

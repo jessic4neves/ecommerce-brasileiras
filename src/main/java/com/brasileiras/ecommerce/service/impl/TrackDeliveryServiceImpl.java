@@ -1,8 +1,8 @@
-package com.brasileiras.service.impl;
+package com.brasileiras.ecommerce.service.impl;
 
-import com.brasileiras.model.TrackDelivery;
-import com.brasileiras.repository.TrackDeliveryRepository;
-import com.brasileiras.service.TrackDeliveryService;
+import com.brasileiras.ecommerce.model.TrackDelivery;
+import com.brasileiras.ecommerce.repository.TrackDeliveryRepository;
+import com.brasileiras.ecommerce.service.TrackDeliveryService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
