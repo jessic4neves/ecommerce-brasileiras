@@ -41,7 +41,7 @@ public class InvoicingServiceImpl implements InvoicingService {
         existingInvoicing.setItems(updatedInvoicing.getItems());
         existingInvoicing.setAccountPay(updatedInvoicing.getAccountPay());
 
-        InvoicingRepository.save(existingInvoicing);
+        invoicingRepository.save(existingInvoicing);
     }
 
     @Override
