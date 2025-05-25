@@ -7,6 +7,6 @@ public interface SaleItemService {
     List<SaleItem> findAll();
     SaleItem findById(Long id);
     SaleItem save(SaleItem saleItem);
-    void updateStock(Long saleItemId, int quantity);
+    void update(Long accountReceiveId, SaleItem saleItem);
     void delete(Long id);
 }

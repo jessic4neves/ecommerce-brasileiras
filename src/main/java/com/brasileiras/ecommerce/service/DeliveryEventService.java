@@ -7,6 +7,6 @@ public interface DeliveryEventService {
     List<DeliveryEvent> findAll();
     DeliveryEvent findById(Long id);
     DeliveryEvent save(DeliveryEvent deliveryEvent);
-    void updateStock(Long deliveryEventId, int quantity);
+    void update(Long accountReceiveId, DeliveryEvent deliveryEvent);
     void delete(Long id);
 }

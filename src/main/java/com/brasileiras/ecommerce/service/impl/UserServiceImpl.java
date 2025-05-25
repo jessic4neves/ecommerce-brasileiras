@@ -1,47 +1,45 @@
 package com.brasileiras.service.impl;
 
-import com.brasileiras.model.Product;
-import com.brasileiras.repository.ProductRepository;
-import com.brasileiras.service.ProductService;
+import com.brasileiras.model.User;
+import com.brasileiras.repository.UserRepository;
+import com.brasileiras.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService {
-    private final ProductRepository productRepository;
+public class UserServiceImpl implements UserService {
+    private final UserRepository userRepository;
 
-    public ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     @Override
-    public Product findById(Long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+    public User findById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 
     @Override
-    public Product save(Product product) {
-        return productRepository.save(product);
+    public User save(User user) {
+        return userRepository.save(User);
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long productId, int quantity) {
-        Product product = findById(productId);
-        product.setEstoque(product.getEstoque() + quantity);
-        productRepository.save(product);
-    }
+    public void update(Long userId, User user) {
+        user user = findById(userId);
+        userRepository.save(user);
+    } 
 
     @Override
     public void delete(Long id) {
-        productRepository.deleteById(id);
+        userRepository.deleteById(id);
     }
 }

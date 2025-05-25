@@ -28,17 +28,15 @@ public class SaleItemServiceImpl implements SaleItemService {
     }
 
     @Override
-    public SaleItem save(SaleItem SaleItem) {
+    public SaleItem save(SaleItem saleItem) {
         return saleItemRepository.save(saleItem);
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long saleItemId, int quantity) {
-        SaleItem saleItem = findById(saleItemId);
-        saleItem.setEstoque(saleItem.getEstoque() + quantity);
+    public void update(Long saleItemId, SaleItem saleItem) {
+        saleItem saleItem = findById(saleItemId);
         saleItemRepository.save(saleItem);
-    }
+    } 
 
     @Override
     public void delete(Long id) {

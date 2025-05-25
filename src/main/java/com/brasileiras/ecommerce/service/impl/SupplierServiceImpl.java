@@ -1,47 +1,45 @@
 package com.brasileiras.service.impl;
 
-import com.brasileiras.model.Product;
-import com.brasileiras.repository.ProductRepository;
-import com.brasileiras.service.ProductService;
+import com.brasileiras.model.Supplier;
+import com.brasileiras.repository.SupplierRepository;
+import com.brasileiras.service.SupplierService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService {
-    private final ProductRepository productRepository;
+public class SupplierServiceImpl implements SupplierService {
+    private final SupplierRepository supplierRepository;
 
-    public ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public SupplierServiceImpl(SupplierRepository supplierRepository) {
+        this.supplierRepository = supplierRepository;
     }
 
     @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public List<Supplier> findAll() {
+        return supplierRepository.findAll();
     }
 
     @Override
-    public Product findById(Long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+    public Supplier findById(Long id) {
+        return supplierRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Supplier not found"));
     }
 
     @Override
-    public Product save(Product product) {
-        return productRepository.save(product);
+    public Supplier save(Supplier supplier) {
+        return supplierRepository.save(supplier);
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long productId, int quantity) {
-        Product product = findById(productId);
-        product.setEstoque(product.getEstoque() + quantity);
-        productRepository.save(product);
-    }
+    public void update(Long supplierId, Supplier supplier) {
+        supplier supplier = findById(supplierId);
+        supplierRepository.save(supplier);
+    } 
 
     @Override
     public void delete(Long id) {
-        productRepository.deleteById(id);
+        supplierRepository.deleteById(id);
     }
 }

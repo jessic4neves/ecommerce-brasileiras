@@ -1,27 +1,37 @@
-package com.brasileiras.ecommerce.controller;
+package com.brasileiras.controller;
 
-import com.brasileiras.ecommerce.model.Sale;
-import com.brasileiras.ecommerce.repository.SaleRepository;
+import com.brasileiras.model.Sale;
+import com.brasileiras.service.SaleService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/sales")
+@RequestMapping("/api/sale")
 public class SaleController {
-    private final SaleRepository repository;
+    private final SaleService saleService;
 
-    public SaleController(SaleRepository repository) {
-        this.repository = repository;
+    public SaleController(SaleService saleService) {
+        this.saleService = saleService;
     }
 
     @GetMapping
-    public List<Sale> listAll() {
-        return repository.findAll();
+    public List<Sale> getAll() {
+        return saleService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Sale getById(@PathVariable Long id) {
+        return saleService.getById(id);
     }
 
     @PostMapping
-    public Sale create(@RequestBody Sale sale) {
-        return repository.save(sale);
+    public Sale save(@RequestBody Sale sale) {
+        return saleService.save(sale);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        saleService.delete(id);
     }
 }

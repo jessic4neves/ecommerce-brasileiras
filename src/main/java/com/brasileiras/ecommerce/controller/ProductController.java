@@ -1,27 +1,37 @@
-package com.brasileiras.ecommerce.controller;
+package com.brasileiras.controller;
 
-import com.brasileiras.ecommerce.model.Product;
-import com.brasileiras.ecommerce.repository.ProductRepository;
+import com.brasileiras.model.Product;
+import com.brasileiras.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductController {
-    private final ProductRepository repository;
+    private final ProductService productService;
 
-    public ProductController(ProductRepository repository) {
-        this.repository = repository;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     @GetMapping
-    public List<Product> listAll() {
-        return repository.findAll();
+    public List<Product> getAll() {
+        return productService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Product getById(@PathVariable Long id) {
+        return productService.getById(id);
     }
 
     @PostMapping
-    public Product create(@RequestBody Product product) {
-        return repository.save(product);
+    public Product save(@RequestBody Product product) {
+        return productService.save(product);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        productService.delete(id);
     }
 }

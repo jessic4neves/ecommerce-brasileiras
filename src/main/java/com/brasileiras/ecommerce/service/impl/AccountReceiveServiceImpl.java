@@ -33,12 +33,11 @@ public class AccountReceiveServiceImpl implements AccountReceiveService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long accountReceiveId, int quantity) {
+    public void update(Long accountReceiveId, AccountReceive accountReceive) {
         AccountReceive accountReceive = findById(accountReceiveId);
-        accountReceive.setEstoque(accountReceive.getEstoque() + quantity);
         accountReceiveRepository.save(accountReceive);
     }
+
 
     @Override
     public void delete(Long id) {

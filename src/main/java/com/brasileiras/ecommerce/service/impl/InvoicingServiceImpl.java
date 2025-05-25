@@ -33,12 +33,10 @@ public class InvoicingServiceImpl implements InvoicingService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long invoicingId, int quantity) {
-        Invoicing invoicing = findById(invoicingId);
-        invoicing.setEstoque(invoicing.getEstoque() + quantity);
-        invoicingRepository.save(invoicing);
-    }
+    public void update(Long invoicingEventId, InvoicingEvent invoicingEvent) {
+        invoicingEvent invoicingEvent = findById(invoicingEventId);
+        invoicingEventRepository.save(invoicingEvent);
+    } 
 
     @Override
     public void delete(Long id) {

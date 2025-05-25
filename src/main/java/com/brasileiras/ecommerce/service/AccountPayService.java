@@ -7,6 +7,6 @@ public interface AccountPayService {
     List<AccountPay> findAll();
     AccountPay findById(Long id);
     AccountPay save(AccountPay accountPay);
-    void updateStock(Long accountPayId, int quantity);
+    void update(Long accountPayId, AccountPay accountPay);
     void delete(Long id);
 }

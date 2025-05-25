@@ -7,6 +7,6 @@ public interface SupplierService {
     List<Supplier> findAll();
     Supplier findById(Long id);
     Supplier save(Supplier supplier);
-    void updateStock(Long supplierId, int quantity);
+    void update(Long accountReceiveId, Supplier supplier);
     void delete(Long id);
 }

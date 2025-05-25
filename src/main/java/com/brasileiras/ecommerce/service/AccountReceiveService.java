@@ -7,6 +7,6 @@ public interface AccountReceiveService {
     List<AccountReceive> findAll();
     AccountReceive findById(Long id);
     AccountReceive save(AccountReceive accountReceive);
-    void updateStock(Long accountReceiveId, int quantity);
+    void update(Long accountReceiveId, AccountReceive accountReceive);
     void delete(Long id);
 }

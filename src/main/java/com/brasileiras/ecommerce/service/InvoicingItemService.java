@@ -7,6 +7,6 @@ public interface InvoicingItemService {
     List<InvoicingItem> findAll();
     InvoicingItem findById(Long id);
     InvoicingItem save(InvoicingItem invoicingItem);
-    void updateStock(Long invoicingItemId, int quantity);
+    void update(Long accountReceiveId, InvoicingItem invoicingItem);
     void delete(Long id);
 }

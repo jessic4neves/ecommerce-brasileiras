@@ -7,6 +7,6 @@ public interface AddressService {
     List<Address> findAll();
     Address findById(Long id);
     Address save(Address address);
-    void updateStock(Long addressId, int quantity);
+    void update(Long accountReceiveId, Address address);
     void delete(Long id);
 }

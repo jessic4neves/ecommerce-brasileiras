@@ -1,47 +1,45 @@
 package com.brasileiras.service.impl;
 
-import com.brasileiras.model.Product;
-import com.brasileiras.repository.ProductRepository;
-import com.brasileiras.service.ProductService;
+import com.brasileiras.model.TrackDelivery;
+import com.brasileiras.repository.TrackDeliveryRepository;
+import com.brasileiras.service.TrackDeliveryService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService {
-    private final ProductRepository productRepository;
+public class TrackDeliveryServiceImpl implements TrackDeliveryService {
+    private final TrackDeliveryRepository trackDeliveryRepository;
 
-    public ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public TrackDeliveryServiceImpl(TrackDeliveryRepository trackDeliveryRepository) {
+        this.trackDeliveryRepository = trackDeliveryRepository;
     }
 
     @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public List<TrackDelivery> findAll() {
+        return trackDeliveryRepository.findAll();
     }
 
     @Override
-    public Product findById(Long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+    public TrackDelivery findById(Long id) {
+        return trackDeliveryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("TrackDelivery not found"));
     }
 
     @Override
-    public Product save(Product product) {
-        return productRepository.save(product);
+    public TrackDelivery save(TrackDelivery trackDelivery) {
+        return trackDeliveryRepository.save(trackDelivery);
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long productId, int quantity) {
-        Product product = findById(productId);
-        product.setEstoque(product.getEstoque() + quantity);
-        productRepository.save(product);
-    }
+    public void update(Long trackDeliveryId, TrackDelivery trackDelivery) {
+        trackDelivery trackDelivery = findById(trackDeliveryId);
+        trackDeliveryRepository.save(trackDelivery);
+    } 
 
     @Override
     public void delete(Long id) {
-        productRepository.deleteById(id);
+        trackDeliveryRepository.deleteById(id);
     }
 }

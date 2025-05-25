@@ -7,6 +7,6 @@ public interface ClientService {
     List<Client> findAll();
     Client findById(Long id);
     Client save(Client client);
-    void updateStock(Long clientId, int quantity);
+    void update(Long accountReceiveId, Client client);
     void delete(Long id);
 }

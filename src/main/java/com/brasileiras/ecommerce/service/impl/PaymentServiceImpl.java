@@ -33,12 +33,10 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long paymentId, int quantity) {
-        Payment payment = findById(paymentId);
-        payment.setEstoque(payment.getEstoque() + quantity);
+    public void update(Long paymentId, Payment payment) {
+        payment payment = findById(paymentId);
         paymentRepository.save(payment);
-    }
+    } 
 
     @Override
     public void delete(Long id) {

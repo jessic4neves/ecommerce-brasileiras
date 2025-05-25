@@ -33,10 +33,8 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long addressId, int quantity) {
-        Address address = findById(addressId);
-        address.setEstoque(address.getEstoque() + quantity);
+    public void update(Long addressId, Address address) {
+        address address = findById(addressId);
         addressRepository.save(address);
     }
 

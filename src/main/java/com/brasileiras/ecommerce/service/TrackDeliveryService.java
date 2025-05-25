@@ -7,6 +7,6 @@ public interface TrackDeliveryService {
     List<TrackDelivery> findAll();
     TrackDelivery findById(Long id);
     TrackDelivery save(TrackDelivery trackDelivery);
-    void updateStock(Long trackDeliveryId, int quantity);
+    void update(Long accountReceiveId, TrackDelivery trackDelivery);
     void delete(Long id);
 }

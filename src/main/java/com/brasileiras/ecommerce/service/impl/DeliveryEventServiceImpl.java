@@ -33,10 +33,8 @@ public class DeliveryEventServiceImpl implements DeliveryEventService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long deliveryEventId, int quantity) {
-        DeliveryEvent deliveryEvent = findById(deliveryEventId);
-        deliveryEvent.setEstoque(deliveryEvent.getEstoque() + quantity);
+    public void update(Long deliveryEventId, DeliveryEvent deliveryEvent) {
+        deliveryEvent deliveryEvent = findById(deliveryEventId);
         deliveryEventRepository.save(deliveryEvent);
     }
 

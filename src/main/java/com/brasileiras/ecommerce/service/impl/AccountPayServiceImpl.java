@@ -33,10 +33,8 @@ public class AccountPayServiceImpl implements AccountPayService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long accountPayId, int quantity) {
+    public void update(Long accountPayId, AccountPay accountPay) {
         AccountPay accountPay = findById(accountPayId);
-        accountPay.setEstoque(accountPay.getEstoque() + quantity);
         accountPayRepository.save(accountPay);
     }
 

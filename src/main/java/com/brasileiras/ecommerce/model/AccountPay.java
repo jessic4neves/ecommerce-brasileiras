@@ -17,5 +17,51 @@ public class AccountPay {
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
 
-    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Invoicing getInvoicing() {
+        return invoicing;
+    }
+
+    public void setInvoicing(Invoicing invoicing) {
+        this.invoicing = invoicing;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
+
+    public LocalDate getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public LocalDate getPaymentDay() {
+        return paymentDay;
+    }
+
+    public void setPaymentDay(LocalDate paymentDay) {
+        this.paymentDay = paymentDay;
+    }
+
+    public AccountStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(AccountStatus status) {
+        this.status = status;
+    }
 }

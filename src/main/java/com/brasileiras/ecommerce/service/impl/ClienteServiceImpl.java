@@ -33,10 +33,8 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    @Transactional
-    public void updateStock(Long clientId, int quantity) {
-        Client client = findById(clientId);
-        client.setEstoque(client.getEstoque() + quantity);
+    public void update(Long clientId, Client client) {
+        client client = findById(clientId);
         clientRepository.save(client);
     }
 
