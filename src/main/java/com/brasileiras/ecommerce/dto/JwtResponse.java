@@ -1,5 +1,7 @@
 package com.brasileiras.ecommerce.dto;
 
+import.java.util.List;
+
 public class JwtResponse {
     private String token;
     private String type = "Bearer";

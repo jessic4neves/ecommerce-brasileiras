@@ -31,7 +31,7 @@ public class ProductController {
     }
 
     @PutMapping
-    public void updateStock(@PathVariable Long id, @RequestBody Long quantity) {
+    public void updateStock(@PathVariable Long id, @RequestBody int quantity) {
         productService.updateStock(id, quantity);
     }
 
