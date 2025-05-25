@@ -25,8 +25,8 @@ public class InvoicingItemController {
     }
 
     @PutMapping
-    public InvoicingItem update(@PathVariable Long id, @RequestBody InvoicingItem invoicingItem) {
-        return invoicingItemService.update(id, invoicingItem);
+    public void update(@PathVariable Long id, @RequestBody InvoicingItem invoicingItem) {
+        invoicingItemService.update(id, invoicingItem);
     }
 
     @PostMapping

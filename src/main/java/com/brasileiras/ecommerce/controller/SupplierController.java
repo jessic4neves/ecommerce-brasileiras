@@ -26,8 +26,8 @@ public class SupplierController {
     }
 
     @PutMapping
-    public Supplier update(@PathVariable Long id, @RequestBody Supplier supplier) {
-        return supplierService.update(id, supplier);
+    public void update(@PathVariable Long id, @RequestBody Supplier supplier) {
+        supplierService.update(id, supplier);
     }
 
     @PostMapping

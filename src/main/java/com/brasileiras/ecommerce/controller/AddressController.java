@@ -26,8 +26,8 @@ public class AddressController {
     }
 
     @PutMapping
-    public Address update(@PathVariable Long id, @RequestBody Address address) {
-        return addressService.update(id, address);
+    public void update(@PathVariable Long id, @RequestBody Address address) {
+        addressService.update(id, address);
     }
 
     @PostMapping

@@ -26,8 +26,8 @@ public class DeliveryEventController {
     }
 
     @PutMapping
-    public DeliveryEvent update(@PathVariable Long id, @RequestBody DeliveryEvent deliveryEvent) {
-        return deliveryEventService.update(id, deliveryEvent);
+    public void update(@PathVariable Long id, @RequestBody DeliveryEvent deliveryEvent) {
+        deliveryEventService.update(id, deliveryEvent);
     }
 
     @PostMapping

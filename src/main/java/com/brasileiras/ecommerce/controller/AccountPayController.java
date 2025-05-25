@@ -26,8 +26,8 @@ public class AccountPayController {
     }
 
     @PutMapping
-    public AccountPay update(@PathVariable Long id, @RequestBody AccountPay accountPay) {
-        return accountPayService.update(id, accountPay);
+    public void update(@PathVariable Long id, @RequestBody AccountPay accountPay) {
+        accountPayService.update(id, accountPay);
     }
 
     @PostMapping

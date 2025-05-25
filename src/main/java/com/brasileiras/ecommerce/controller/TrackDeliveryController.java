@@ -26,8 +26,8 @@ public class TrackDeliveryController {
     }
 
     @PutMapping
-    public TrackDelivery update(@PathVariable Long id, @RequestBody TrackDelivery trackDelivery) {
-        return trackDeliveryService.update(id, trackDelivery);
+    public void update(@PathVariable Long id, @RequestBody TrackDelivery trackDelivery) {
+        trackDeliveryService.update(id, trackDelivery);
     }
 
     @PostMapping

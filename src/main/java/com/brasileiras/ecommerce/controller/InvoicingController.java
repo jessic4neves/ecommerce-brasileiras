@@ -26,8 +26,8 @@ public class InvoicingController {
     }
     
     @PutMapping
-    public Invoicing update(@PathVariable Long id, @RequestBody Invoicing invoicing) {
-        return invoicingService.update(id, invoicing);
+    public void update(@PathVariable Long id, @RequestBody Invoicing invoicing) {
+        invoicingService.update(id, invoicing);
     }
 
     @PostMapping

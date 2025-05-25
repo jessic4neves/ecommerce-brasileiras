@@ -26,8 +26,8 @@ public class UserController {
     }
 
      @PutMapping
-    public User update(@PathVariable Long id, @RequestBody User user) {
-        return userService.update(id, user);
+    public void update(@PathVariable Long id, @RequestBody User user) {
+        userService.update(id, user);
     }
 
     @PostMapping

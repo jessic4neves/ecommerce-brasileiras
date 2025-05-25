@@ -26,8 +26,8 @@ public class SaleItemController {
     }
 
     @PutMapping
-    public SaleItem update(@PathVariable Long id, @RequestBody SaleItem saleItem) {
-        return saleItemService.update(id, saleItem);
+    public void update(@PathVariable Long id, @RequestBody SaleItem saleItem) {
+        saleItemService.update(id, saleItem);
     }
 
     @PostMapping

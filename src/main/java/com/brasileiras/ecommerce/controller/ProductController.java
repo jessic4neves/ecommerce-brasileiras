@@ -26,8 +26,8 @@ public class ProductController {
     }
 
     @PutMapping
-    public Product update(@PathVariable Long id, @RequestBody Product product) {
-        return productService.update(id, product);
+    public void update(@PathVariable Long id, @RequestBody Product product) {
+        productService.update(id, product);
     }
 
     @PostMapping

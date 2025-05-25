@@ -26,8 +26,8 @@ public class ClientController {
     }
 
     @PutMapping
-    public Client update(@PathVariable Long id, @RequestBody Client client) {
-        return clientService.update(id, client);
+    public void update(@PathVariable Long id, @RequestBody Client client) {
+        clientService.update(id, client);
     }
 
     @PostMapping

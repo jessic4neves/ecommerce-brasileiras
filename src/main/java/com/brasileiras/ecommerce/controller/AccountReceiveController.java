@@ -26,8 +26,8 @@ public class AccountReceiveController {
     }
 
     @PutMapping
-    public AccountReceive update(@PathVariable Long id, @RequestBody AccountReceive accountReceive) {
-        return accountReceiveService.update(id, accountReceive);
+    public void update(@PathVariable Long id, @RequestBody AccountReceive accountReceive) {
+        accountReceiveService.update(id, accountReceive);
     }
 
     @PostMapping
